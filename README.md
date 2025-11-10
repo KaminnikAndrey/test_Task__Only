@@ -3,3 +3,4 @@
 3)	Открыть проект в Webstrom
 4)	Выполнить: npm i
 5)	Запустить проект: npm run dev
+6)  Нажать на http://localhost:3000/
