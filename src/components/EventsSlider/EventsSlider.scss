@@ -1,0 +1,153 @@
+@use '../../styles/variables' as *;
+
+
+.events-slider{
+  padding-top: 50px;
+  margin: 0 auto;
+  width: 1200px;
+  position: relative;
+
+
+  &__wrapper{
+    display: flex;
+    gap: 80px;
+    align-items: flex-end;
+  }
+
+  &__arrow{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+
+    &--prev{
+      top: 50%;
+      left: -80px;
+      &::before{
+        content: "";
+        width: 7px;
+        height: 2px;
+        position: absolute;
+        left: 50%;
+        top: calc(50% + 2px);
+        transform: translate(-50%, -50%) rotate(45deg);
+        background-color: $blue;
+      }
+
+      &::after{
+        content: "";
+        width: 7px;
+        height: 2px;
+        position: absolute;
+        left: 50%;
+        top: calc(50% - 2px);
+        transform: translate(-50%, -50%) rotate(135deg);
+        background-color: $blue;
+      }
+    }
+
+    &--next{
+      top: 50%;
+      right: -80px;
+
+      &::before{
+        content: "";
+        width: 7px;
+        height: 2px;
+        position: absolute;
+        left: 50%;
+        top: calc(50% + 2px);
+        transform: translate(-50%, -50%) rotate(-45deg);
+        background-color: $blue;
+      }
+
+      &::after{
+        content: "";
+        width: 7px;
+        height: 2px;
+        position: absolute;
+        left: 50%;
+        top: calc(50% - 2px);
+        transform: translate(-50%, -50%) rotate(-135deg);
+        background-color: $blue;
+      }
+    }
+
+    &--hidden{
+      display: none;
+    }
+  }
+
+  @media (max-width: 1460px) {
+    width: 900px;
+
+    &__arrow{
+      display: none;
+    }
+  }
+
+  @media (max-width: 970px) {
+    width: 300px;
+    top: 0;
+    transform: translateY(-140px);
+
+    &__container{
+      height: 115px;
+    }
+  }
+}
+
+.event-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 15px;
+
+  &__year{
+      color: $blue;
+      font-size: 25px;
+      font-family: Bebas Neue;
+      height: 30px;
+  }
+
+  &__content{
+    color: $black-blue;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @media (max-width: 970px) {
+    &__year{
+      font-size: 16px;
+      height: 19px;
+      width: fit-content;
+    }
+
+    &__content{
+      font-size: 14px;
+      line-height: 1.45;
+      height: 80px;
+    }
+
+
+  }
+}
+
+.swiper-slide {
+  @media (max-width: 970px){
+
+    &:not(.swiper-slide-active) {
+      .event-card {
+        &__year{
+          opacity: 0.5;
+        }
+
+        &__content{
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+

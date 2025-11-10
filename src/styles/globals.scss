@@ -1,0 +1,200 @@
+@use './variables' as *;
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+   overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F4F5F9;
+}
+
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  border: none;
+  padding: 0;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a,
+button,
+input,
+textarea {
+  outline: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  border: none;
+  padding: 0;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a,
+button,
+input,
+textarea {
+  outline: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+.container{
+  width: 1440px;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+  border-left: 1px solid $grey;
+  border-right: 1px solid $grey;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 75px 0;
+
+  @media (max-width: 1460px) {
+    width: 950px;
+  }
+
+  @media (max-width: 970px) {
+    border: none;
+    width: 320px;
+    gap: 78px;
+    height: 570px;
+    padding: 0;
+  }
+}

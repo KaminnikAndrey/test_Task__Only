@@ -1,0 +1,248 @@
+@use '../../styles/variables' as *;
+
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  &::after{
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 1440px;
+    transform: translate(-50%, -50%);
+    height: 1px;
+    display: block;
+    background-color: $grey;
+  }
+
+  &::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100vh;
+    transform: translate(-50%,-50%);
+    width: 1px;
+    display: block;
+    background-color: $grey;
+  }
+
+  &__date{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: bold;
+    font-size: 120px;
+    display: flex;
+    gap: 100px;
+    z-index: -1;
+    height: fit-content;
+  }
+
+  &__date-start{
+    transform: translateY(-20%);
+    color: $iris-100;
+    height: fit-content;
+  }
+
+  &__date-end{
+    transform: translateY(-20%);
+    color: $fushia-100;
+    height: fit-content;
+  }
+
+  &__arrows{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-right: auto;
+    transform: translate(-340px, -120px);
+  }
+
+  &__numbers{
+    font-size: 14px;
+    font-weight: 500;
+    color: $black-blue;
+  }
+
+  &__navigation{
+    display: flex;
+    gap: 20px;
+  }
+
+  &__arrow {
+    background: transparent;
+    border: 1px solid #42567A;
+    color: #42567A;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 16px;
+    fill: #42567A;
+    stroke: #42567A;
+    opacity: 1;
+
+    &:disabled,
+    {
+      fill: rgba(66, 86, 122, 0.5);
+      stroke: rgba(66, 86, 122, 0.5);
+      opacity: 0.5;
+    }
+
+    &--prev{
+      position: relative;
+
+      &::before{
+        content: "";
+        width: 10px;
+        height: 2px;
+        position: absolute;
+        left: 50%;
+        top: calc(50% + 3px);
+        transform: translate(-50%, -50%) rotate(45deg);
+        background-color: $black-blue;
+      }
+
+      &::after{
+        content: "";
+        width: 10px;
+        height: 2px;
+        position: absolute;
+        left: 50%;
+        top: calc(50% - 3px);
+        transform: translate(-50%, -50%) rotate(135deg);
+        background-color: $black-blue;
+      }
+    }
+
+    &--next{
+      position: relative;
+
+      &::before{
+        content: "";
+        width: 10px;
+        height: 2px;
+        position: absolute;
+        left: 50%;
+        top: calc(50% + 3px);
+        transform: translate(-50%, -50%) rotate(-45deg);
+        background-color: $black-blue;
+      }
+
+      &::after{
+        content: "";
+        width: 10px;
+        height: 2px;
+        position: absolute;
+        left: 50%;
+        top: calc(50% - 3px);
+        transform: translate(-50%, -50%) rotate(-135deg);
+        background-color: $black-blue;
+      }
+    }
+  }
+
+  &__text{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+    transform: translateX(15px);
+  }
+
+  @media (max-width: 1460px){
+    &__arrows{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-right: auto;
+      transform: translate(-140px, -140px);
+    }
+  }
+
+  @media (max-width: 970px) {
+    &__progress svg{
+      display: block;
+      transform: translateY(330px);
+    }
+
+    &::before, &::after {
+      display: none;
+    }
+
+    &__date{
+      gap: 20px;
+    }
+
+    &__date-start{
+      font-size: 56px;
+    }
+
+    &__date-end{
+      font-size: 56px;
+    }
+
+    &__arrows{
+      gap: 10px;
+      transform: translate(-50px, 260px);
+      bottom: 0;
+      left: 0;
+    }
+
+    &__navigation{
+      gap: 10px;
+    }
+
+    &__arrow{
+      width: 25px;
+      height: 25px;
+
+      &--next::before,
+      &--next::after,
+      &--prev::before,
+      &--prev::after{
+        width: 6px;
+      }
+
+      &--next::before,
+      &--prev::before,{
+        top: calc(50% + 1.5px);
+      }
+
+      &--next::after,
+      &--prev::after,{
+        top: calc(50% - 1.5px);
+      }
+    }
+
+    &--mobile{
+      top: 160px;
+      transform: translate(-50%, 0);
+      &::after{
+        content: "";
+        position: absolute;
+        width: 280px;
+        height: 1px;
+        background-color: #C7CDD9;
+        top: 130px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+      }
+    }
+
+
+  }
+}

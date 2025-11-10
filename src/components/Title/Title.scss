@@ -1,0 +1,33 @@
+@use '../../styles/variables' as *;
+
+.title{
+  font-size: 28px;
+  font-weight: bold;
+  color: $black-blue;
+  max-width: 354px;
+  line-height: 1.2;
+  position: absolute;
+  top: 170px;
+  left: 80px;
+
+  &::after{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 120px;
+    background: linear-gradient(#3877EE 0%, #6171DE 23%, #9869C9 52%, #C263B9 76%,  #D661B2 87%, #E25FAD 93%, #E95EAA 97%, #EF5DA8 99%);
+    top: 5px;
+    left: -80px;
+  }
+
+  @media (max-width: 970px) {
+    font-size: 10px;
+    top: 60px;
+    left: 20px;
+    max-width: 125px;
+
+    &::after{
+      display: none;
+    }
+  }
+}
